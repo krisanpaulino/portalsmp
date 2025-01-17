@@ -80,4 +80,18 @@ class SekolahModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    function countPendaftaran()
+    {
+        $this->select('sekolah.sekolah_nama, COUNT(pendaftaran.pendaftaran_id) as jumlah');
+        $this->join('pendaftaran', 'pendaftaran.sekolah_id = sekolah.sekolah_id', 'left');
+        $this->groupBy('pendaftaran.sekolah_id');
+        return $this->find();
+    }
+    function laporanKecamatan()
+    {
+        $this->select("DISTINCT sekolah_kecamatan, COUNT(case when sekolah.sekolah_tipe = 'Swasta' THEN 1 END) as swasta, COUNT(case when sekolah.sekolah_tipe = 'Negeri' THEN 1 END) as negeri", false);
+        $this->groupBy('sekolah_kecamatan');
+        return $this->find();
+    }
 }

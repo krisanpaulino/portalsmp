@@ -16,7 +16,9 @@ class Admin extends BaseController
         $data = [
             'title' => 'Dashboard',
             'sekolahCount' => $MSekolah->countAllResults(),
-            'pendaftarCount' =>  $MPendaftaran->countAllResults()
+            'pendaftarCount' =>  $MPendaftaran->countAllResults(),
+            'sekolah' =>  $MSekolah->countPendaftaran(),
+            'kecamatan' =>  $MSekolah->laporanKecamatan(),
         ];
         return view('admin/dashboard', $data);
     }

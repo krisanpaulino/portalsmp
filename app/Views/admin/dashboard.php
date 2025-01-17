@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
+                    <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card card-secondary">
                             <div class="card-body text-center">
                                 <div class="round-box">
@@ -50,19 +50,53 @@
                                 <p>Pendaftar</p><a class="btn-arrow arrow-secondary" href="<?= base_url('admin/pendaftaran') ?>"><i class="toprightarrow-secondary fa fa-arrow-up me-2"></i>Lihat Pendaftaran </a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+
                 </div>
+
             </div>
-            <div class="col-sm-12 col-xl-6 box-col-6">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header pb-0">
-                        <h5>Bar chart</h5>
+                        <h5>Laporan Jumlah SMP Per Kecamatan</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table-border-vertical table">
+                            <thead>
+                                <tr>
+                                    <th>Kecamatan</th>
+                                    <th>Negeri</th>
+                                    <th>Swasta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($kecamatan as $row) : ?>
+                                    <tr>
+                                        <td><?= $row->sekolah_kecamatan ?></td>
+                                        <td><?= $row->negeri ?></td>
+                                        <td><?= $row->swasta ?></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xl-8 box-col-8">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h5>Grafik Pendaftaran Sekolah</h5>
                     </div>
                     <div class="card-body">
                         <div id="basic-bar"></div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- Container-fluid Ends-->
@@ -78,4 +112,40 @@
 <script src="<?= base_url('assets/admin') ?>/js/custom-card/custom-card.js"></script>
 <script src="<?= base_url('assets/admin') ?>/js/dashboard/default.js"></script>
 <script src="<?= base_url('assets/admin') ?>/js/clipboard/clipboard.min.js"></script>
+<script src="<?= base_url('assets/admin') ?>/js/chart/apex-chart/apex-chart.js"></script>
+<?= $this->endSection(); ?>
+<?= $this->section('scripts'); ?>
+<script>
+    var options2 = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            toolbar: {
+                show: false
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: true,
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [{
+            data: [<?php foreach ($sekolah as $row) : ?><?= $row->jumlah ?>, <?php endforeach ?>]
+        }],
+        xaxis: {
+            categories: [<?php foreach ($sekolah as $row) : ?> '<?= $row->sekolah_nama ?>', <?php endforeach ?>],
+        },
+        colors: [vihoAdminConfig.primary]
+    }
+
+    var chart2 = new ApexCharts(
+        document.querySelector("#basic-bar"),
+        options2
+    );
+
+    chart2.render();
+</script>
 <?= $this->endSection(); ?>
