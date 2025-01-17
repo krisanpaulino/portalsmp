@@ -29,6 +29,8 @@ class SekolahModel extends Model
         'sekolah_waktupenyelenggara',
         'sekolah_telepon',
         'sekolah_email',
+        'sekolah_kepalasekolah',
+        'sekolah_kepalayayasan',
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -62,6 +64,7 @@ class SekolahModel extends Model
         'sekolah_waktupenyelenggara' => 'required',
         'sekolah_telepon' => 'required',
         'sekolah_email' => 'required',
+        'sekolah_kepalasekolah' => 'required'
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;

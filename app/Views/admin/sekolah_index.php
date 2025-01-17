@@ -37,8 +37,8 @@
                                         <th>No</th>
                                         <th>NPSN</th>
                                         <th>Nama Sekolah</th>
+                                        <th>Kelurahan</th>
                                         <th>Kecamatan</th>
-                                        <th>Kabupaten/Kota</th>
                                         <th>Email</th>
                                         <th>Telepon</th>
                                         <th>Action</th>

@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="container px-5 my-5">
     <div class="text-center mb-5">
-        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Berita</span></h1>
+        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Sekolah</span></h1>
     </div>
     <div class="row gx-5 justify-content-center">
         <div class="col-lg-12 col-xl-12 col-xxl-12">
@@ -35,6 +35,16 @@
                                     <td><?= $sekolah->sekolah_tipe ?></td>
                                 </tr>
                                 <tr>
+                                    <th>Kepala Sekolah</th>
+                                    <td><?= $sekolah->sekolah_kepalasekolah ?></td>
+                                </tr>
+                                <?php if ($sekolah->sekolah_tipe == 'Swasta') : ?>
+                                    <tr>
+                                        <th>Kepala Yayasan</th>
+                                        <td><?= $sekolah->sekolah_kepalayayasan ?></td>
+                                    </tr>
+                                <?php endif ?>
+                                <tr>
                                     <th>Lokasi Sekolah</th>
                                     <td><?= $sekolah->sekolah_lokasi ?></td>
                                 </tr>
@@ -60,7 +70,7 @@
                                 </tr>
                                 <tr>
                                     <th>Url Lokasi</th>
-                                    <td><?= $sekolah->sekolah_peta ?></td>
+                                    <td><a href="<?= $sekolah->sekolah_peta ?>" target="_blank">Lihat</a></td>
                                 </tr>
                                 <tr>
                                     <th>Email Sekolah</th>

@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
+                    <!-- <div class="col-xl-6 col-md-3 col-sm-6 box-col-3 des-xl-25 rate-sec">
                         <div class="card income-card card-secondary">
                             <div class="card-body text-center">
                                 <div class="round-box">
@@ -50,6 +50,16 @@
                                 <p>Pendaftar</p><a class="btn-arrow arrow-secondary" href="<?= base_url('admin/pendaftaran') ?>"><i class="toprightarrow-secondary fa fa-arrow-up me-2"></i>Lihat Pendaftaran </a>
                             </div>
                         </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-6 box-col-6">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h5>Bar chart</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="basic-bar"></div>
                     </div>
                 </div>
             </div>

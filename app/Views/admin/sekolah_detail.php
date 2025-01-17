@@ -45,6 +45,14 @@
                                         <td><?= $sekolah->sekolah_tipe ?></td>
                                     </tr>
                                     <tr>
+                                        <th>Kepala Sekolah</th>
+                                        <td><?= $sekolah->sekolah_kepalasekolah ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Kepala Yayasan</th>
+                                        <td><?= $sekolah->sekolah_kepalayayasan ?></td>
+                                    </tr>
+                                    <tr>
                                         <th>Lokasi Sekolah</th>
                                         <td><?= $sekolah->sekolah_lokasi ?></td>
                                     </tr>
@@ -70,7 +78,7 @@
                                     </tr>
                                     <tr>
                                         <th>Url Lokasi</th>
-                                        <td><?= $sekolah->sekolah_peta ?></td>
+                                        <td><a href="<?= $sekolah->sekolah_peta ?>" target="_blank">Lihat</a></td>
                                     </tr>
                                     <tr>
                                         <th>Email Sekolah</th>

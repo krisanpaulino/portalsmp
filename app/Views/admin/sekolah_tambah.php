@@ -63,6 +63,24 @@
                                 </div>
                             </div>
                             <div class="form-group mb-4">
+                                <label for="sekolah_kepalasekolah"><span class="txt-danger">*</span>Nama Kepala Sekolah</label>
+                                <input type="text" class="form-control <?= (isset(session('errors')['sekolah_kepalasekolah'])) ? 'is-invalid' : '' ?>" id="sekolah_kepalasekolah" name="sekolah_kepalasekolah" value="<?= old('sekolah_kepalasekolah') ?>">
+                                <div class="invalid-feedback">
+                                    <?php if (isset(session('errors')['sekolah_kepalasekolah'])) : ?>
+                                        <?= session('errors')['sekolah_kepalasekolah'] ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="sekolah_kepalayayasan">Nama Kepala Yayasan (Swasta)</label>
+                                <input type="text" class="form-control <?= (isset(session('errors')['sekolah_kepalayayasan'])) ? 'is-invalid' : '' ?>" id="sekolah_kepalayayasan" name="sekolah_kepalayayasan" value="<?= old('sekolah_kepalayayasan') ?>">
+                                <div class="invalid-feedback">
+                                    <?php if (isset(session('errors')['sekolah_kepalayayasan'])) : ?>
+                                        <?= session('errors')['sekolah_kepalayayasan'] ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
                                 <label for="sekolah_deskripsi"><span class="txt-danger">*</span>Deskripsi</label>
                                 <textarea class="form-control <?= (isset(session('errors')['sekolah_deskripsi'])) ? 'is-invalid' : '' ?>" id="editor2" name="sekolah_deskripsi"><?= old('sekolah_deskripsi') ?></textarea>
                                 <div class="invalid-feedback">
